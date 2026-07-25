@@ -1,0 +1,18 @@
+name: validate-devschema
+on:
+  pull_request:
+    paths:
+      - '**/devcontainer.json'
+      - .github/workflows/validate-devschema.yml
+  push:
+    branches:
+      - main
+    paths:
+      - '**/devcontainer.json'
+      - .github/workflows/validate-devschema.yml
+
+jobs:
+  validate-devschema:
+    uses: actionsforge/actions/.github/workflows/validate-devschema.yml@main
+    with:
+      verbose: true
